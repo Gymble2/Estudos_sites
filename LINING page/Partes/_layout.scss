@@ -1,0 +1,321 @@
+
+.container{
+    max-width: 1220px;
+    margin:0 auto;
+    padding: 0 8px;
+}
+
+//definir o maximo para n ultrapassar os parametros do site
+
+// bg- home
+
+.bg-home{
+    position: relative;
+}
+
+.bg-home:before{
+    content: '';
+    display: block;
+    position: absolute;
+    background-image: linear-gradient(to bottom, rgba(6, 18, 30, 0.1), #06121e), url("../assets/bg.svg");
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 0 ;
+    opacity: 0.9;
+
+}
+//fim bg
+
+//hero inicio
+.hero{
+    color: $white-normal;
+    min-height: 80vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 14px;
+
+    h1{
+        text-align: center;
+        line-height: 150%;
+        max-width: 940px;
+        font-size: 46px;
+    }
+    p{
+        text-align: center;
+        margin:14px;
+    }
+    .button-contact{
+        padding: 14px 26px;
+        color: $white-normal;
+        background-color: $red-normal;
+        border: 0;
+        font-size: 18px;
+        font-weight: 650;
+        margin:14px 0;
+    }
+
+    .button-contact:hover{
+       animation: scalebutton 1s alternate infinite;
+}
+    @keyframes scalebutton {
+        from{
+            transform: scale(1);
+        }
+        to{
+            transform: scale(1.07);
+        }
+        
+    }
+}
+//criar parametros para tela caso diminua
+@media screen and (max-width: 762px){
+    .hero{
+        min-height: 60vh;
+
+        h1{
+            font-size: 34px;
+            padding: 0 14px;
+            width: 100%;
+        }
+        p{
+            font-size: 14px;
+        }
+    }
+
+
+}
+
+@media screen and (max-width: 762px){
+    .hero h1{
+        font-size: 24px;
+    }
+}
+
+//fim hero
+
+//about
+.about{
+    background-color: $primary-normal;
+    overflow:hidden;//ultrapassar algum item
+    color: $white-normal;
+}
+
+.about-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 34px 16px 70px 16px;
+
+    img{
+    max-width: 570px;
+    }
+}
+
+.about-content div{
+    flex: 1;
+
+}
+
+.about-descripition{
+    h2{
+     font-size: 36px;
+     margin-bottom: 25px; }  
+    p{
+        margin-bottom: 36px;
+        font-size: 22px;
+        flex-direction: column;
+        text-align: center;
+        justify-items: center;
+    }
+}
+
+@media screen and (max-width: 762px){
+    .about-content{
+        flex-direction: column;
+    }
+}
+
+
+
+
+//--------------------------------------------------------------
+
+.services{
+    background-color: $white-normal;
+    color: $black-normal;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 54px 14px;
+
+}
+
+.services-content h2{
+    text-transform: uppercase;             //deixar tudo maiusculo
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 14px;
+}
+
+.services-content p{
+    line-height: 150%;
+    margin-bottom: 14px;
+    text-align: center;
+    max-width: 630px;           // maximo tamanho
+}
+
+.haircuts{
+    display:flex;             // se adapta a tela que ele esta
+    justify-content: center;           // definir local onde fica os itens
+    align-items: center;
+    margin-bottom: 36px;
+    gap: 16px;                    //define os espaços (gutters (en-US)) entre as linhas e colunas
+    padding: 25px 44px 34px 44px;             //define uma a distância entre o conteúdo de um elemento e suas bordas cima, direita...
+    
+}
+
+.haircut{
+    flex:1; //alinha automaticamente
+    margin-top: 15px;
+    display: flex; //torna ele um "flex" editavel 
+    flex-direction: column; //alinhamento de itens
+    background-color: $white-normal; //cor do fundo
+    border-radius: 8px;  //bordas arredondadas
+    box-shadow: 0px -1px 17px -4px rgba(0,0,0, 0.6); //sombras
+    overflow: hidden;//ultrapassar o objeto escolhido
+    
+    img{
+        width:100%;
+        max-width: 354px;
+        transition: transform 0.2s;//referenciando a transformação e os segundos
+    }
+}
+
+            //hover animar algo
+.haircut img:hover{
+    transform: scale(1.2);//transformar a escala
+    z-index: 3;
+}
+
+.haircut-info{
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    padding: 14px;
+    background-color: $white-normal;
+    z-index: 99;//camadas
+    
+    
+}
+
+.haircut-info:hover{
+    color: $white-normal;
+    background-color: $red-normal;
+    padding: 4px 12px;
+    border-radius:4px;
+    border:0;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1000px){
+    .haircuts{
+        flex-direction: column;
+    }
+    .haircut img{
+        flex-direction: column;
+    }
+}
+
+//footer
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 54px 0px;
+    gap: 24px; 
+    color: $white-normal;
+    p{
+        align-items: center;
+        justify-content: center;
+        padding: 0px 0px;
+    }
+}
+
+.footer-icons{
+    display: flex;
+    gap: 22px ;
+    color: $white-normal;
+
+
+
+
+}
+
+//----------------------
+
+//botão zap
+
+.btn-whatspp{
+    position: fixed;
+    bottom: 18px;
+    right: 25px;
+    z-index: 99;
+
+    img{
+        max-width: 74px;
+        transition: transform 0.4s;//adicionar transformar tamanho
+    }
+
+    img:hover{
+        transform: scale(1.1);//transformar tamanho
+
+
+    }
+
+
+}
+
+.btn-whatspp .tooltip-text{
+visibility: hidden;//aparecer na tela
+position: absolute;
+width: 120px;
+top: 8px;
+left: -140px;
+padding: 4 px;
+text-align: center;
+border-radius: 8px;
+background-color: $black-normal;
+color: $white-normal;
+opacity: 0 ;//compeça com opacidade
+transition: opacity 0.42s;//sai a opacidade
+
+
+}
+
+            //hover é botão de contato
+.btn-whatspp:hover  .tooltip-text{
+    visibility: visible;
+    opacity: 1;
+
+
+
+}
+
+@media screen and (max-width:738px){
+    .btn-whatspp{
+        img{
+            max-width: 64px;
+        }
+    }
+}
